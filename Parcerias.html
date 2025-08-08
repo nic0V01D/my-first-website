@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parcerias | Rhema Vale</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    .header-parcerias {
+      background: linear-gradient(to right, #f9f9f9, #e6e6e6);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .header-parcerias h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+    }
+
+    .header-parcerias p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .parcerias-conteudo {
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+
+    .parcerias-conteudo h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .parcerias-conteudo p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .parcerias-beneficios {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .beneficio {
+      flex: 1 1 300px;
+      background-color: #fafafa;
+      border-left: 4px solid #fca311;
+      padding: 20px;
+      border-radius: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .beneficio svg {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      fill: #fca311;
+    }
+
+    .beneficio h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: #1e1e1e;
+    }
+
+    .cta-parceria {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta-parceria h2 {
+      font-size: 1.8rem;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .cta-parceria form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    .cta-parceria input,
+    .cta-parceria textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .cta-parceria button {
+      padding: 12px;
+      background-color: #fca311;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-parceria button:hover {
+      background-color: #e6950d;
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-parcerias">
+    <div class="container">
+      <h1>Juntos, Somos Mais Fortes</h1>
+      <p>Seja um parceiro estratégico da Rhema Vale e cresça conosco</p>
+    </div>
+  </header>
+
+  <section class="parcerias-conteudo container">
+    <h2>Por Que Se Tornar um Parceiro?</h2>
+    <p>Na Rhema Vale, acreditamos na força das conexões. Buscamos parcerias que compartilhem nossos valores de excelência, inovação e compromisso com o cliente. Juntos, podemos criar soluções ainda mais impactantes para a indústria nacional.</p>
+
+    <div class="parcerias-beneficios">
+      <div class="beneficio">
+        <svg viewBox="0 0 24 24"><path d="M12 2C7.031 2 2 6.031 2 11c0 1.878.488 3.651 1.344 5.203-.057.337-.156.839-.344 1.484a1 1 0 0 0 1.219 1.219c.645-.188 1.146-.287 1.484-.344A9.003 9.003 0 0 0 12 20c4.969 0 9-5.031 9-9s-4.031-9-9-9zm-1 6h2v4h-2V8zm0 6h2v2h-2v-2z"/></svg>
+        <div>
+          <h3>Crescimento Mútuo</h3>
+          <p>Trabalhamos lado a lado para expandir oportunidades e mercados.</p>
+        </div>
+      </div>
+
+      <div class="beneficio">
+        <svg viewBox="0 0 24 24"><path d="M12 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm5 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM7 10a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm5 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+        <div>
+          <h3>Rede Estratégica</h3>
+          <p>Você se conecta com uma rede de profissionais e empresas qualificadas.</p>
+        </div>
+      </div>
+
+      <div class="beneficio">
+        <svg viewBox="0 0 24 24"><path d="M3 13c0-1.105.895-2 2-2h2v-2h2v2h2V9h2v2h2V9h2v2h2c1.105 0 2 .895 2 2v3h-6v-1H9v1H3v-3z"/></svg>
+        <div>
+          <h3>Parcerias Reais</h3>
+          <p>Valorizamos relações transparentes, duradouras e com propósito.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-parceria">
+      <h2>Interessado em se tornar um parceiro?</h2>
+      <p>Preencha o formulário abaixo e entraremos em contato:</p>
+      <form action="https://formsubmit.co/rhemavale@gmail.com" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="mensagem" rows="4" placeholder="Sua mensagem" required style="resize: none;"></textarea>
+        <input type="hidden" name="_next" value="/obrigado.html">
+        <input type="hidden" name="_captcha" value="true">
+        <button type="submit">Quero Ser Parceiro</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rhema Vale. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

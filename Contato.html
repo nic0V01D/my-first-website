@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Rhema Vale - Soluções Eletromecânicas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #F5A623;
+      --primary-dark: #d99016;
+      --dark: #1a1a1a;
+      --gray: #4A4A4A;
+      --light-gray: #f8f8f8;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light-gray);
+      color: var(--gray);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Header */
+    header {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-img {
+      height: 50px;
+      width: auto;
+    }
+    
+    nav a {
+      margin: 0 15px;
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section - Contato */
+    .hero-contact {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .hero-contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-contact h1 {
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    
+    .hero-contact p {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+    
+    /* Main Content */
+    .contact-container {
+      padding: 80px 0;
+      position: relative;
+    }
+    
+    .contact-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .contact-info {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-info::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--primary);
+    }
+    
+    .contact-info h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: var(--dark);
+      position: relative;
+    }
+    
+    .contact-info h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+    }
+    
+    .contact-details {
+      margin-top: 30px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(245, 166, 35, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: var(--dark);
+    }
+    
+    .contact-text p {
+      color: var(--gray);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(245, 166, 35, 0.1);
+      border-radius: 50%;
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+    
+    /* Formulário */
+    .contact-form {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    
+    .contact-form h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: var(--dark);
+      position: relative;
+    }
+    
+    .contact-form h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: all 0.3s;
+      background-color: var(--light-gray);
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .btn-submit {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 14px 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-submit:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    
+    .btn-submit.loading::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      animation: loading 1.5s infinite linear;
+    }
+    
+    @keyframes loading {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .status-message {
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 6px;
+      text-align: center;
+      display: none;
+      font-weight: 500;
+    }
+    
+    .status-success {
+      background-color: #d4edda;
+      color: #155724;
+      display: block;
+    }
+    
+    .status-error {
+      background-color: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+    
+    .status-warning {
+      background-color: #fff3cd;
+      color: #856404;
+      display: block;
+    }
+    
+    /* Mapa */
+    .map-section {
+      margin-top: 80px;
+    }
+    
+    .map-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .map-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 4px;
+      background: var(--primary);
+    }
+    
+    .map-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 450px;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      padding: 80px 0 30px;
+      margin-top: 80px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-size: 1.4rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .footer-column p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+    
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+    
+    .footer-contact-icon {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-top: 3px;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
+    }
+    
+    .footer-links a::before {
+      content: "→";
+      color: var(--primary);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover::before {
+      opacity: 1;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: #999;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: row;
+        gap: 20px;
+      }
+      
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+      
+      .hero-contact h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-contact p {
+        font-size: 1.2rem;
+      }
+      
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .map-container {
+        height: 300px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo-img {
+        height: 40px;
+      }
+      
+      .hero-contact h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-contact p {
+        font-size: 1rem;
+      }
+      
+      .contact-info, .contact-form {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <img src="RhemaLogo.png" alt="Logo Rhema Vale" class="logo-img" />
+        <div>
+          <span style="font-weight: 700; color: #333;">RHEMA</span> 
+          <span style="font-weight: 700; color: #F5A623;">VALE</span>
+        </div>
+      </div>
+      <nav>
+        <a href="Sobre.html">Sobre</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="parcerias.html">Parcerias</a>
+        <a href="carreiras.html">Carreiras</a>
+        <a href="contato.html" style="color: var(--primary);">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-contact">
+    <div class="container hero-contact-content">
+      <h1>Entre em Contato Conosco</h1>
+      <p>Soluções personalizadas para suas necessidades industriais</p>
+    </div>
+  </section>
+
+  <section class="contact-container">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2>Informações de Contato</h2>
+          <p>Estamos prontos para atender suas demandas e responder suas dúvidas.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Endereço</h3>
+                <p>Av. Industrial, 1234<br>Guaratinguetá - SP</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Telefone</h3>
+                <p>+55 12 99115-0256<br>Segunda a Sexta, 8h às 18h</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h3>E-mail</h3>
+                <p>rhemavale@gmail.com<br>contato@rhemavale.com.br</p>
+              </div>
+            </div>
+          </div>
+          
+          <h3 style="margin-top: 30px;">Siga-nos</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@rhemavalemontagememanutenc4647"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/rhemavale/"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h2>Envie uma Mensagem</h2>
+          <form id="contactForm" action="https://formspree.io/f/xblkpkzg" method="POST">
+            <div class="form-group">
+              <label class="form-label" for="nome">Nome Completo</label>
+              <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="email">E-mail</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Seu e-mail" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="assunto">Assunto</label>
+              <select id="assunto" name="assunto" class="form-control" required>
+                <option value="" disabled selected>Selecione o assunto</option>
+                <option value="Solicitar Orçamento">Solicitar Orçamento</option>
+                <option value="Suporte Técnico">Suporte Técnico</option>
+                <option value="Proposta de Parceria">Proposta de Parceria</option>
+                <option value="Trabalhe Conosco">Trabalhe Conosco</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Descreva sua necessidade" required></textarea>
+            </div>
+            
+            <!-- Campos ocultos para Formspree -->
+            <input type="hidden" name="_subject" value="Nova mensagem do site Rhema Vale">
+            <input type="hidden" name="_language" value="pt-BR">
+            <input type="text" name="_gotcha" style="display:none">
+            
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+            
+            <div id="statusMessage" class="status-message"></div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="map-section">
+        <h2>Onde Estamos</h2>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117436.139196999!2d-45.267153125!3d-22.8145208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ccc4e5f4e5b1b9%3A0x6c5a4a7e1e1c8b0f!2sGuaratinguet%C3%A1%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1717528287389!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <p>Av. Industrial, 1234</p>
+              <p>Guaratinguetá - SP</p>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <p>+55 12 99115-0256</p>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <p>rhemavale@gmail.com</p>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Links Rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Redes Sociais</h3>
+          <p>Siga-nos para acompanhar nossos projetos e novidades</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@rhemavalemontagememanutenc4647"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/rhemavale/"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Rhema Vale. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Função para animar elementos quando entram na viewport
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.contact-item, .contact-form');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      elements.forEach(element => {
+        element.style.opacity = 0;
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(element);
+      });
+    }
+    
+    // Inicializar animações quando a página carregar
+    document.addEventListener('DOMContentLoaded', animateOnScroll);
+    
+    // Função para mostrar mensagens de status
+    function showStatus(message, type) {
+      const statusMessage = document.getElementById('statusMessage');
+      statusMessage.textContent = message;
+      statusMessage.className = 'status-message';
+      
+      if (type === 'success') {
+        statusMessage.classList.add('status-success');
+      } else if (type === 'error') {
+        statusMessage.classList.add('status-error');
+      } else if (type === 'warning') {
+        statusMessage.classList.add('status-warning');
+      }
+      
+      statusMessage.style.display = 'block';
+      
+      // Ocultar mensagem após 5 segundos
+      setTimeout(() => {
+        statusMessage.style.display = 'none';
+      }, 5000);
+    }
+    
+    // Configuração do envio do formulário com Formspree e limitação de envios
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitButton = document.getElementById('submitBtn');
+      const statusMessage = document.getElementById('statusMessage');
+      
+      // Limitar envios - verificar último envio no localStorage
+      const lastSubmission = localStorage.getItem('lastSubmission');
+      const now = new Date().getTime();
+      const tenDays = 10 * 24 * 60 * 60 * 1000; // 10 dias em milissegundos
+      
+      if (lastSubmission && (now - lastSubmission) < tenDays) {
+        const nextDate = new Date(parseInt(lastSubmission) + tenDays);
+        const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+        const formattedDate = nextDate.toLocaleDateString('pt-BR', options);
+        
+        showStatus(`Você só pode enviar uma mensagem a cada 10 dias. Tente novamente após ${formattedDate}.`, 'warning');
+        return;
+      }
+      
+      // Validação básica
+      const nome = document.getElementById('nome');
+      const email = document.getElementById('email');
+      const telefone = document.getElementById('telefone');
+      
+      if(nome.value.trim() === '') {
+        showStatus('Por favor, preencha seu nome', 'error');
+        nome.focus();
+        return;
+      }
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRegex.test(email.value)) {
+        showStatus('Por favor, insira um e-mail válido', 'error');
+        email.focus();
+        return;
+      }
+      
+      // Validação de telefone simples
+      if(telefone.value.trim() === '' || telefone.value.length < 10) {
+        showStatus('Por favor, insira um telefone válido', 'error');
+        telefone.focus();
+        return;
+      }
+      
+      // Mostrar estado de carregamento
+      submitButton.textContent = 'Enviando...';
+      submitButton.classList.add('loading');
+      submitButton.disabled = true;
+      
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          // Sucesso no envio
+          showStatus('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+          
+          // Salvar data do envio no localStorage
+          localStorage.setItem('lastSubmission', now.toString());
+          
+          // Resetar formulário
+          form.reset();
+        } else {
+          // Erro no envio
+          const errorData = await response.json();
+          showStatus('Ocorreu um erro ao enviar. Por favor, tente novamente mais tarde.', 'error');
+          console.error('Erro no envio:', errorData);
+        }
+      } catch (error) {
+        // Erro de rede
+        showStatus('Erro de conexão. Verifique sua internet e tente novamente.', 'error');
+        console.error('Erro de rede:', error);
+      } finally {
+        // Restaurar botão
+        submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensagem';
+        submitButton.classList.remove('loading');
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

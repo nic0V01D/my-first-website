@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carreiras - Rhema Vale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #F5A623;
+      --primary-dark: #d99016;
+      --dark: #1a1a1a;
+      --gray: #4A4A4A;
+      --light-gray: #f8f8f8;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --success: #28a745;
+      --error: #dc3545;
+      --warning: #ffc107;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light-gray);
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      background-color: var(--dark);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo span {
+      color: var(--primary);
+    }
+    
+    nav a {
+      color: var(--white);
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero-careers {
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+      animation: fadeInDown 1s ease;
+    }
+    
+    .hero-content p {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      font-weight: 300;
+      animation: fadeInUp 1s ease 0.3s both;
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Main Content */
+    .container {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    
+    .section-title.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 4px;
+      background: var(--primary);
+    }
+    
+    .jobs-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+    
+    .job {
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .job.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .job::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--primary);
+      transition: all 0.4s ease;
+    }
+    
+    .job:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    
+    .job:hover::before {
+      width: 100%;
+      opacity: 0.1;
+    }
+    
+    .job h3 {
+      margin: 0 0 15px 0;
+      color: var(--dark);
+      font-size: 1.5rem;
+      position: relative;
+    }
+    
+    .job h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .job p {
+      margin-bottom: 20px;
+      color: var(--gray);
+    }
+    
+    .job-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    /* Form Section */
+    .form-section {
+      background-color: var(--white);
+      padding: 60px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    
+    .form-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .form-section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: var(--dark);
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .form-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: all 0.3s;
+      background-color: var(--light-gray);
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+    }
+    
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .btn-submit {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 14px 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-submit:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    
+    .btn-submit.loading::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      animation: loading 1.5s infinite linear;
+    }
+    
+    @keyframes loading {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .status-message {
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 6px;
+      text-align: center;
+      display: none;
+      font-weight: 500;
+    }
+    
+    .status-success {
+      background-color: #d4edda;
+      color: #155724;
+      display: block;
+    }
+    
+    .status-error {
+      background-color: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+    
+    .status-warning {
+      background-color: #fff3cd;
+      color: #856404;
+      display: block;
+    }
+    
+    /* Benefits Section */
+    .benefits {
+      margin: 80px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    
+    .benefits.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .benefit-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .benefit-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    
+    .benefit-card h3 {
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      padding: 80px 0 30px;
+      margin-top: 80px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+      padding: 0 20px;
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-size: 1.4rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .footer-column p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+    
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+    
+    .footer-contact-icon {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-top: 3px;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
+    }
+    
+    .footer-links a::before {
+      content: "→";
+      color: var(--primary);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover::before {
+      opacity: 1;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: #999;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      nav a {
+        margin: 0;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      
+      .form-section {
+        padding: 30px 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-content p {
+        font-size: 1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">RHEMA <span>VALE</span></div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="Carreiras.html" style="color: var(--primary);">Carreiras</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="Projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-careers">
+    <div class="hero-content">
+      <h1>Faça parte da nossa equipe</h1>
+      <p>Valorizamos pessoas comprometidas, proativas e com sede de inovação</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="section-title" id="sectionTitle">
+      <h2>Vagas Disponíveis</h2>
+      <p>Encontre a oportunidade perfeita para desenvolver sua carreira conosco</p>
+    </div>
+    
+    <div class="jobs-container">
+      <div class="job" id="job1">
+        <div class="job-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Eletricista Industrial</h3>
+        <p><strong>Requisitos:</strong> Experiência com painéis, comandos e instalações em ambientes industriais. NR-10 atualizado.</p>
+        <p><strong>Benefícios:</strong> Vale-refeição, oportunidade de crescimento e treinamentos especializados.</p>
+      </div>
+      
+      <div class="job" id="job2">
+        <div class="job-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>Técnico em Automação</h3>
+        <p><strong>Requisitos:</strong> Conhecimento em CLPs, sensores e redes industriais. Formação técnica e disponibilidade para viagens.</p>
+        <p><strong>Benefícios:</strong> Vale-transporte, equipamentos modernos e ambiente inovador.</p>
+      </div>
+      
+      <div class="job" id="job3">
+        <div class="job-icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h3>Engenheiro Eletromecânico</h3>
+        <p><strong>Requisitos:</strong> Experiência em projetos industriais, domínio em AutoCAD e software de simulação elétrica.</p>
+        <p><strong>Benefícios:</strong> Participação nos lucros, plano de carreira e desenvolvimento profissional.</p>
+      </div>
+    </div>
+    
+    <div class="benefits" id="benefitsSection">
+      <div class="section-title">
+        <h2>Benefícios Rhema Vale</h2>
+        <p>Oferecemos um ambiente de trabalho que valoriza e recompensa nossos colaboradores</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Desenvolvimento</h3>
+          <p>Programas de treinamento e capacitação</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Crescimento</h3>
+          <p>Plano de carreira e oportunidades de promoção</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-umbrella-beach"></i>
+          </div>
+          <h3>Flexibilidade</h3>
+          <p>Horários flexíveis e home office parcial</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Ferramentas Modernas</h3>
+          <p>Equipamentos de última geração para seu trabalho</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-section" id="formSection">
+      <h2>Envie seu Currículo</h2>
+<form id="careerForm" action="https://formsubmit.co/el/yemigu" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label class="form-label" for="nome">Nome Completo</label>
+    <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome" required>
+  </div>
+  
+  <div class="form-group">
+    <label class="form-label" for="email">E-mail</label>
+    <input type="email" id="email" name="email" class="form-control" placeholder="Seu e-mail" required>
+  </div>
+  
+  <div class="form-group">
+    <label class="form-label" for="telefone">Telefone</label>
+    <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" required>
+  </div>
+  
+  <div class="form-group">
+    <label class="form-label" for="vaga">Vaga de Interesse</label>
+    <select id="vaga" name="vaga" class="form-control" required>
+      <option value="" disabled selected>Selecione uma vaga</option>
+      <option value="Eletricista Industrial">Eletricista Industrial</option>
+      <option value="Técnico em Automação">Técnico em Automação</option>
+      <option value="Engenheiro Eletromecânico">Engenheiro Eletromecânico</option>
+      <option value="Outra">Outra</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label class="form-label" for="mensagem">Mensagem</label>
+    <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Conte-nos por que você gostaria de trabalhar conosco..." required></textarea>
+  </div>
+  
+  <div class="form-group">
+    <label class="form-label" for="curriculo">Currículo (PDF)</label>
+    <input type="file" id="curriculo" name="arquivo" accept=".pdf" required>
+  </div>
+  
+  <button type="submit" class="btn-submit" id="submitBtn">
+    <i class="fas fa-paper-plane"></i> Enviar Currículo
+  </button>
+  
+  <div id="statusMessage" class="status-message"></div>
+</form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Contato</h3>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <p>Av. Industrial, 1234</p>
+            <p>Guaratinguetá - SP</p>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <p>+55 12 99115-0256</p>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <p>rhemavale@gmail.com</p>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Links Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="carreiras.html">Trabalhe Conosco</a></li>
+          <li><a href="Carreiras.html">Trabalhe Conosco</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Redes Sociais</h3>
+        <p>Siga-nos para acompanhar nossos projetos e novidades</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@rhemavalemontagememanutenc4647"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/rhemavale/"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 Rhema Vale. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Função para verificar se o elemento está visível na tela
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75 &&
+        rect.bottom >= 0
+      );
+    }
+    
+    // Função para animar elementos quando entram na viewport
+    function animateElements() {
+      // Animação para o título da seção
+      const sectionTitle = document.getElementById('sectionTitle');
+      if (isElementInViewport(sectionTitle)) {
+        sectionTitle.classList.add('visible');
+      }
+      
+      // Animação para as vagas
+      const jobs = document.querySelectorAll('.job');
+      jobs.forEach((job, index) => {
+        if (isElementInViewport(job)) {
+          setTimeout(() => {
+            job.classList.add('visible');
+          }, 150 * index);
+        }
+      });
+      
+      // Animação para a seção de benefícios
+      const benefitsSection = document.getElementById('benefitsSection');
+      if (isElementInViewport(benefitsSection)) {
+        benefitsSection.classList.add('visible');
+      }
+      
+      // Animação para o formulário
+      const formSection = document.getElementById('formSection');
+      if (isElementInViewport(formSection)) {
+        formSection.classList.add('visible');
+      }
+    }
+    
+    // Inicializar animações
+    document.addEventListener('DOMContentLoaded', () => {
+      // Ativar animações ao carregar
+      animateElements();
+      
+      // Ativar animações ao rolar
+      window.addEventListener('scroll', animateElements);
+    });
+    
+    // Função para mostrar mensagens de status
+    function showStatus(message, type) {
+      const statusMessage = document.getElementById('statusMessage');
+      statusMessage.textContent = message;
+      statusMessage.className = 'status-message';
+      
+      if (type === 'success') {
+        statusMessage.classList.add('status-success');
+      } else if (type === 'error') {
+        statusMessage.classList.add('status-error');
+      } else if (type === 'warning') {
+        statusMessage.classList.add('status-warning');
+      }
+      
+      statusMessage.style.display = 'block';
+      
+      // Ocultar mensagem após 5 segundos
+      setTimeout(() => {
+        statusMessage.style.display = 'none';
+      }, 5000);
+    }
+    
+    // Configuração do envio do formulário com sistema anti-spam
+    document.getElementById('careerForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitButton = document.getElementById('submitBtn');
+      const statusMessage = document.getElementById('statusMessage');
+      
+      // Validação básica
+      const nome = document.getElementById('nome');
+      const email = document.getElementById('email');
+      const telefone = document.getElementById('telefone');
+      const vaga = document.getElementById('vaga');
+      const curriculo = document.getElementById('curriculo');
+      
+      if(nome.value.trim() === '') {
+        showStatus('Por favor, preencha seu nome', 'error');
+        nome.focus();
+        return;
+      }
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRegex.test(email.value)) {
+        showStatus('Por favor, insira um e-mail válido', 'error');
+        email.focus();
+        return;
+      }
+      
+      // Validação de telefone
+      if(telefone.value.trim() === '' || telefone.value.length < 10) {
+        showStatus('Por favor, insira um telefone válido', 'error');
+        telefone.focus();
+        return;
+      }
+      
+      // Verificar se vaga foi selecionada
+      if(vaga.value === null || vaga.value === "") {
+        showStatus('Por favor, selecione uma vaga', 'error');
+        vaga.focus();
+        return;
+      }
+      
+      // Verificar se arquivo foi selecionado
+      if(!curriculo.files || curriculo.files.length === 0) {
+        showStatus('Por favor, selecione um arquivo PDF', 'error');
+        return;
+      }
+      
+      // Verificar tipo de arquivo
+      const file = curriculo.files[0];
+      if(file.type !== 'application/pdf') {
+        showStatus('Por favor, envie um arquivo no formato PDF', 'error');
+        return;
+      }
+      
+      // Verificar tamanho do arquivo (máximo 5MB)
+      if(file.size > 5 * 1024 * 1024) {
+        showStatus('O arquivo é muito grande. Tamanho máximo permitido: 5MB', 'error');
+        return;
+      }
+      
+      // Mostrar estado de carregamento
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+      submitButton.disabled = true;
+      
+      // Simular envio para backend com banco de dados
+      try {
+        // Em um sistema real, aqui seria uma chamada para sua API
+        // await fetch('/api/careers', { method: 'POST', body: formData });
+        
+        // Simulando atraso de rede
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Simular verificação de spam no backend
+        const lastSubmission = localStorage.getItem('lastCareerSubmission');
+        const now = new Date().getTime();
+        const tenDays = 10 * 24 * 60 * 60 * 1000; // 10 dias em milissegundos
+        
+        if (lastSubmission && (now - parseInt(lastSubmission)) < tenDays) {
+          const nextDate = new Date(parseInt(lastSubmission) + tenDays);
+          const formattedDate = nextDate.toLocaleDateString('pt-BR');
+          showStatus(`Você já enviou um currículo recentemente. Tente novamente após ${formattedDate}.`, 'warning');
+          return;
+        }
+        
+        // Sucesso no envio
+        showStatus('Currículo enviado com sucesso! Entraremos em contato em breve.', 'success');
+        
+        // Salvar data do envio no localStorage (simulação de banco de dados)
+        localStorage.setItem('lastCareerSubmission', now.toString());
+        
+        // Resetar formulário
+        form.reset();
+        
+      } catch (error) {
+        // Erro de rede
+        showStatus('Erro de conexão. Verifique sua internet e tente novamente.', 'error');
+        console.error('Erro de rede:', error);
+      } finally {
+        // Restaurar botão
+        submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Currículo';
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

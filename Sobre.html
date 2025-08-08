@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conheça Nossa História - Rhema Vale</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 38px;
+      color: #4A4A4A;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    h2 {
+      font-size: 26px;
+      color: #F5A623;
+      margin-bottom: 15px;
+      border-left: 5px solid #F5A623;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    p {
+      margin-bottom: 18px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    ul li::before {
+      content: "✔️";
+      position: absolute;
+      left: 0;
+      color: #F5A623;
+      font-size: 16px;
+    }
+
+    .servico {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #fcfcfc;
+      border-left: 4px solid #F5A623;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .servico:hover {
+      background-color: #f2f2f2;
+    }
+
+    .servico h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .servico h3 span {
+      color: #F5A623;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      fill: #F5A623;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Conheça Nossa História</h1>
+      <p>Uma trajetória de excelência e inovação em soluções eletromecânicas desde 2018.</p>
+    </header>
+
+    <section>
+      <h2><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>Quem Somos</h2>
+      <p>A Rhema Vale Instalações e Montagens Eletromecânica iniciou suas atividades em <strong>26 de junho de 2018</strong>, com o objetivo de prestar serviços de reparação e manutenção de equipamentos de comunicação.</p>
+      <p>Com o passar do tempo, alinhados com as necessidades do mercado e nossa afinidade com serviços de instalações, passamos a atuar também com <strong>Instalações e Manutenções Elétricas</strong>, <strong>Segurança Eletrônica</strong> e <strong>Automação de Portas e Portões</strong>.</p>
+    </section>
+
+    <section>
+      <h2><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0110 10h-2a8 8 0 10-8 8v2a10 10 0 010-20zm1 5v6h5v2h-7V7h2z"/></svg>Missão</h2>
+      <p>Fornecer ao mercado soluções integradoras em instalações com excelência e total satisfação dos nossos clientes.</p>
+    </section>
+
+    <section>
+      <h2><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9l-7-7zM6 0h7l7 7v13a4 4 0 01-4 4H6a4 4 0 01-4-4V2a2 2 0 012-2z"/></svg>Valores</h2>
+      <ul>
+       
+        <li>Capacidade, agilidade e qualidade</li>
+        <li>Capacitação e treinamento contínuos</li>
+        <li>Compromisso com clientes e parceiros</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 6.5l-1.41-1.41L12 12.67 4.41 5.09 3 6.5l9 9 9-9z"/></svg>Nossos Serviços</h2>
+
+      <div class="servico">
+        <h3><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 6h16v2H4zm0 6h10v2H4z"/></svg><span>Automação de Portas e Portões</span></h3>
+        <ul>
+          <li>Motores deslizantes</li>
+          <li>Motores fuso deslizantes</li>
+          <li>Motores basculantes</li>
+          <li>Motores pivotantes</li>
+          <li>Fechaduras eletrônicas, magnéticas e de eletroímã</li>
+        </ul>
+      </div>
+
+      <div class="servico">
+        <h3><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg><span>Segurança Eletrônica</span></h3>
+        <ul>
+          <li>Cerca elétrica</li>
+          <li>Concertina</li>
+          <li>Porteiros eletrônicos e vídeo porteiro</li>
+          <li>Alarme e monitoramento 24h</li>
+          <li>Câmeras com acesso remoto por aplicativo</li>
+        </ul>
+      </div>
+
+      <div class="servico">
+        <h3><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 6h16v2H4zm0 6h16v2H4z"/></svg><span>Comunicação</span></h3>
+        <ul>
+          <li>Centrais de PABX</li>
+          <li>Interfones residenciais e prediais</li>
+          <li>Internet</li>
+          <li>Cabeamento estruturado</li>
+        </ul>
+      </div>
+
+      <div class="servico">
+        <h3><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.44L8.34 7.1 9.66 10H6v4h3.66l-1.32 2.9L12 19.56l3.66-2.66L14.34 14H18v-4h-3.66l1.32-2.9z"/></svg><span>Instalação e Manutenção Elétrica</span></h3>
+        <p>Atendimento completo para sistemas elétricos industriais, comerciais e residenciais.</p>
+      </div>
+
+      <div class="servico">
+        <h3><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22h12v-2H6v2zM4 4h16v2H4V4zm2 4h12v12H6V8z"/></svg><span>Iluminação e Ar-Condicionado</span></h3>
+        <p>Projetos, instalação e manutenção de sistemas de iluminação e climatização eficientes.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
